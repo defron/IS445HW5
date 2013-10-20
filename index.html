@@ -1,12 +1,38 @@
 ﻿<!DOCTYPE html>
 <html>
-<head>
-    <title></title>
-    <link rel="stylesheet" href="css/default.css" />
-</head>
-<body>
-    <a id="link" href="#">Click me!</a>
-
-    <script src="lib/default.js"></script>
-</body>
+    <head>
+        <title></title>
+        <link rel="stylesheet" href="css/default.css" />
+    </head>
+    <body>
+        <script>
+            var input = prompt("Enter a number between 5 and 20.", "");
+            if (input < 5 || input > 20 || isNaN(input)) {
+                document.writeln("<div id='warning'>the valid input is a number between 5 and 20, please refresh your page to start again</div>");
+            } else {
+                document.writeln("<div id='wrapper'>Times Table - " + input + "x" + input + "<table>");
+                for (var i = 0; i <= input; i += 1) {
+                    document.writeln("<tr>");
+                    if (i === 0) {
+                        document.writeln("<th class='disappear'></th>");
+                    } else {
+                        document.writeln("<th>" + i + "</th>");
+                    }
+                    for (var ii = 0; ii < input; ii += 1) {
+                        var colorize = ""
+                        if ((ii + 1) === i) {
+                            colorize = "colorize";
+                        }
+                        if (i == 0) {
+                            document.writeln("<th>" + (ii + 1) + "</th>");
+                        } else {
+                            document.writeln("<td class='" + colorize + "'>" + ((ii + 1) * (i)) + "</td>");
+                        }
+                    }
+                    document.writeln("</tr>");
+                }
+                document.writeln("</table></div>");
+            }
+        </script>
+    </body>
 </html>
