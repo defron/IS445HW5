@@ -18,9 +18,6 @@ th {
     text-align: center;
     background-color: #ffff99;
 }
-tr:first-child {
-    background-color: #ffff99;
-}
 .disappear {
     visibility: hidden;
 }
